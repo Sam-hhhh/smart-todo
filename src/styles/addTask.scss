@@ -1,0 +1,27 @@
+.add-task {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+
+  /* 初始状态，未点击时 */
+  color: #333; /* 默认文字颜色 */
+  background-color: #fff;
+
+  /* 编辑状态 */
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #777; /* 默认 placeholder 颜色 */
+  }
+}
