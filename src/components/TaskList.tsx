@@ -72,11 +72,11 @@ const TaskList: React.FC<Props> = ({ filter, onTaskSelect }) => {
             </div>
           )}
           {tasks.map((task) => (
-            <TaskItem
-              key={task.id}
-              task={task}
-              onClick={() => onTaskSelect(task.id)}
-            />
+          <TaskItem
+            key={task.id}
+            task={task}
+            onClick={() => onTaskSelect(task.id)}
+          />
           ))}
         </div>
       )}

@@ -60,41 +60,12 @@ const tasksSlice = createSlice({
     },
     updateTaskDetails(
       state,
-      action: PayloadAction<{ id: number; updatedTask: Task }>
+      action: PayloadAction<{ taskId: number; details: Partial<Task> }>
     ) {
-      console.log("=== 开始更新待办 ===");
-      console.log("当前状态:", state.tasks);
-      console.log("Action payload:", action.payload);
-      
-      const index = state.tasks.findIndex(
-        (task) => task.id === action.payload.id
-      );
-      
-      if (index === -1) {
-        console.warn("未找到要更新的待办:", action.payload.id);
-        return;
-      }
-
-      console.log("找到待办索引:", index);
-      console.log("原始待办:", state.tasks[index]);
-      
-      // 保留原始待办的创建时间
-      const createdAt = state.tasks[index].createdAt;
-      
-      // 更新待办
-      state.tasks[index] = {
-        ...action.payload.updatedTask,
-        createdAt, // 确保保留原始创建时间
-      };
-      
-      console.log("更新后的待办:", state.tasks[index]);
-      console.log("更新后的状态:", state.tasks);
-      
-      try {
+      const task = state.tasks.find((t) => t.id === action.payload.taskId);
+      if (task) {
+        Object.assign(task, action.payload.details);
         saveTasksToLocalStorage(state.tasks);
-        console.log("=== 待办更新完成 ===");
-      } catch (error) {
-        console.error("保存到 localStorage 失败:", error);
       }
     },
     updateTaskCategory(
@@ -106,16 +77,16 @@ const tasksSlice = createSlice({
         task.categoryId = action.payload.categoryId;
         saveTasksToLocalStorage(state.tasks);
       }
-    }
+    },
   },
 });
 
-export const { 
-  addTask, 
-  toggleTaskCompletion, 
-  removeTask, 
+export const {
+  addTask,
+  toggleTaskCompletion,
+  removeTask,
   updateTaskDetails,
-  updateTaskCategory 
+  updateTaskCategory,
 } = tasksSlice.actions;
 
 export default tasksSlice.reducer;

@@ -2,64 +2,56 @@
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  .task-detail-form {
-    .task-title {
-      margin: 0 0 20px 0;
-      color: #333;
-      font-size: 1.5rem;
-      font-weight: 500;
-    }
+  h2 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
 
+  .detail-form {
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
 
       label {
         display: block;
-        margin-bottom: 5px;
-        color: #666;
+        margin-bottom: 8px;
         font-size: 0.9rem;
+        color: #666;
       }
 
-      input[type="text"],
       input[type="date"],
-      input[type="time"],
+      input[type="time"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: #333;
+
+        &:focus {
+          outline: none;
+          border-color: #4a90e2;
+          box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+        }
+      }
+
       textarea {
         width: 100%;
         padding: 8px 12px;
         border: 1px solid #ddd;
         border-radius: 4px;
         font-size: 0.9rem;
-        transition: border-color 0.3s;
+        color: #333;
+        min-height: 100px;
+        resize: vertical;
 
         &:focus {
           outline: none;
           border-color: #4a90e2;
+          box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
         }
-      }
-
-      textarea {
-        resize: vertical;
-        min-height: 80px;
-      }
-
-      input[type="checkbox"] {
-        margin-right: 8px;
-      }
-    }
-
-    .save-button {
-      background-color: #4a90e2;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #357abd;
       }
     }
   }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store";
 import { removeTask, updateTaskCategory, updateTaskDetails } from "../store/tasksSlice";
+import { reminderService } from "../services/reminderService";
 import "../styles/TaskContextMenu.scss";
 
 interface Props {
@@ -21,6 +22,7 @@ const TaskContextMenu: React.FC<Props> = ({ taskId, x, y, onClose }) => {
   const [newText, setNewText] = useState(task?.text || "");
 
   const handleDelete = () => {
+    reminderService.clearReminder(taskId);
     dispatch(removeTask(taskId));
     onClose();
   };
@@ -33,8 +35,8 @@ const TaskContextMenu: React.FC<Props> = ({ taskId, x, y, onClose }) => {
   const handleRename = () => {
     if (task && newText.trim() && newText !== task.text) {
       dispatch(updateTaskDetails({
-        id: taskId,
-        updatedTask: { ...task, text: newText.trim() }
+        taskId: taskId,
+        details: { ...task, text: newText.trim() }
       }));
     }
     setIsRenaming(false);
