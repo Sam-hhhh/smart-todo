@@ -1,27 +1,24 @@
 .add-task {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 
-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  transition: background-color 0.3s ease, padding 0.3s ease;
-
-  /* 初始状态，未点击时 */
-  color: #333; /* 默认文字颜色 */
-  background-color: #fff;
-
-  /* 编辑状态 */
-  &:focus {
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
     outline: none;
-  }
+    transition: border-color 0.3s;
 
-  &::placeholder {
-    color: #777; /* 默认 placeholder 颜色 */
+    &:focus {
+      border-color: #4a90e2;
+    }
+
+    &::placeholder {
+      color: #999;
+    }
   }
 }

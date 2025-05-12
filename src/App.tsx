@@ -6,7 +6,7 @@ import { reminderService } from "./services/reminderService";
 import { useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "./store";
-
+import Header from "./components/Header";
 // 创建一个新的组件来处理需要Redux状态的部分
 const AppContent = () => {
   // 使用useMemo来记忆化选择器
@@ -23,7 +23,7 @@ const AppContent = () => {
 
   return (
       <BrowserRouter>
-        <h1>智能代办清单</h1>
+        <Header/>
         <Routes>
           <Route path="/" element={<Navigate to="/all" replace />} />
           <Route path="/all" element={<MainContainer filter="all" />} />

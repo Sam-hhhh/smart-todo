@@ -122,7 +122,7 @@ class ReminderService {
       // 创建并显示通知
       const notification = new Notification("待办提醒", {
         body: `"${task.text}" 将在明天到期`,
-        icon: '/src/assets/react.svg',
+        icon: '/src/assets/logo.svg',
         requireInteraction: true, // 通知不会自动关闭
         tag: `task-${task.id}` // 使用任务ID作为通知标签
       });

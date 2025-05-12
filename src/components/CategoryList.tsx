@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../store";
 import AddCategoryModal from "./AddCategoryModal";
 import CategoryContextMenu from "./CategoryContextMenu";
+import Icon from "./Icon";
 import "../styles/CategoryList.scss";
 
 const CategoryList = () => {
@@ -36,17 +37,23 @@ const CategoryList = () => {
       <h3>分类</h3>
       <ul className="default-categories">
         <li>
+        
           <Link to="/all" className={isActive("/all") ? "active" : ""}>
+          <Icon type="all"/>
             所有待办
           </Link>
         </li>
         <li>
+          
           <Link to="/recent" className={isActive("/recent") ? "active" : ""}>
+          <Icon type="recent"/>
             最近待办
           </Link>
         </li>
         <li>
+          
           <Link to="/completed" className={isActive("/completed") ? "active" : ""}>
+          <Icon type="completed"/>
             已完成
           </Link>
         </li>
@@ -58,11 +65,13 @@ const CategoryList = () => {
           <ul className="custom-categories">
             {categories.map((category) => (
               <li key={category.id}>
+                
                 <Link 
                   to={`/category/${category.id}`}
                   className={isActive(`/category/${category.id}`) ? "active" : ""}
                   onContextMenu={(e) => handleContextMenu(e, category.id, category.name)}
                 >
+                  <Icon type="custom"/>
                   {category.name}
                 </Link>
               </li>
