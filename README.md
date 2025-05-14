@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# Smart Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个智能待办事项管理应用。
 
-Currently, two official plugins are available:
+## ✨ 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **待办事项管理**: 创建、编辑、删除、标记完成待办事项。
+- **分类管理**: 支持自定义分类来组织待办事项。
+- **任务详情**: 为每个任务添加截止日期、提醒时间、描述和备注。
+- **智能提醒**:
+    - 在任务截止日期的前一天，按设定的时间提醒用户。
+    - 在任务截止日期的当天，设定提醒时间的前一个小时再次提醒用户。
+- **通知权限处理**: 检查并引导用户开启浏览器通知权限。
+- **语音输入**: 支持通过语音快速创建待办事项，并能识别日期和时间。
+- **数据持久化**: 使用 Redux 和Localstorage本地存储来保存用户数据。
+- **响应式设计**: 应用界面能适应不同设备。
 
-## Expanding the ESLint configuration
+## 🛠️ 技术栈
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **前端**: React, TypeScript
+- **状态管理**: Redux Toolkit
+- **路由**: React Router
+- **构建工具**: Vite
+- **样式**: Sass 
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚀 如何运行
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **克隆项目**:
+    ```bash
+    git clone <repository-url>
+    cd smart-todo
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2.  **安装依赖**:
+    ```bash
+    npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+3.  **启动开发服务器**:
+    ```bash
+    npm run dev
+
+
+4.  在浏览器中打开 `http://localhost:5173` (或其他 Vite 默认/配置的端口)。
+
+## 📝 未来可考虑的改进
+
+- 用户账户系统，支持数据云同步。
+- 更丰富的自定义选项，例如提醒铃声、主题等。
+- 与日历应用集成。
+- 增加协作功能。
+
+---
+
+欢迎为此项目贡献代码或提出建议！
