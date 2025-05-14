@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "./store";
 import Header from "./components/Header";
+import NotificationPermission from "./components/NotificationPermission";
+
 // 创建一个新的组件来处理需要Redux状态的部分
 const AppContent = () => {
   // 使用useMemo来记忆化选择器
@@ -23,17 +25,18 @@ const AppContent = () => {
 
   return (
     <BrowserRouter basename="/smart-todo">
-    <Header/>
-    <Routes>
-      <Route path="/" element={<Navigate to="/all" replace />} />
-      <Route path="/all" element={<MainContainer filter="all" />} />
-      <Route path="/recent" element={<MainContainer filter="recent" />} />
-      <Route
-        path="/completed"
-        element={<MainContainer filter="completed" />}
-      />
-    </Routes>
-  </BrowserRouter>
+      <Header/>
+      <NotificationPermission />
+      <Routes>
+        <Route path="/" element={<Navigate to="/all" replace />} />
+        <Route path="/all" element={<MainContainer filter="all" />} />
+        <Route path="/recent" element={<MainContainer filter="recent" />} />
+        <Route
+          path="/completed"
+          element={<MainContainer filter="completed" />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
