@@ -5,12 +5,9 @@ import TaskDetail from "./TaskDetail";
 import AddTask from "./AddTask";
 
 const MainLayout = () => {
-  const [filter, setFilter] = useState<"all" | "recent" | "completed">("all");
+  const [filter] = useState<"all" | "recent" | "completed">("all");
   const [selectedTaskId, setSelectedTaskId] = useState<number | null>(null);
 
-  const handleFilterChange = (status: "all" | "recent" | "completed") => {
-    setFilter(status);
-  };
 
   return (
     <div className="main-layout">

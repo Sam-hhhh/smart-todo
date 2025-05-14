@@ -3,7 +3,7 @@ import { store } from "./store";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import { reminderService } from "./services/reminderService";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "./store";
 import Header from "./components/Header";
