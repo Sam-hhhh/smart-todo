@@ -64,7 +64,7 @@ const TaskStatistics: React.FC = () => {
               dataKey="value"
               label={renderCustomizedLabel}
             >
-              {categoryStats.map((entry, index) => (
+              {categoryStats.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
