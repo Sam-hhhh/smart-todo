@@ -35,6 +35,10 @@ const AppContent = () => {
           path="/completed"
           element={<MainContainer filter="completed" />}
         />
+        <Route 
+          path="/category/:categoryId"
+          element={<MainContainer filter="all" />}
+        />
       </Routes>
     </BrowserRouter>
   );
