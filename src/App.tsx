@@ -22,16 +22,18 @@ const AppContent = () => {
   }, [tasks]);
 
   return (
-      <BrowserRouter>
-        <Header/>
-        <Routes>
-          <Route path="/" element={<Navigate to="/all" replace />} />
-          <Route path="/all" element={<MainContainer filter="all" />} />
-          <Route path="/recent" element={<MainContainer filter="recent" />} />
-        <Route path="/completed" element={<MainContainer filter="completed" />} />
-        <Route path="/category/:categoryId" element={<MainContainer filter="all" />} />
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter basename="/smart-todo">
+    <Header/>
+    <Routes>
+      <Route path="/" element={<Navigate to="/all" replace />} />
+      <Route path="/all" element={<MainContainer filter="all" />} />
+      <Route path="/recent" element={<MainContainer filter="recent" />} />
+      <Route
+        path="/completed"
+        element={<MainContainer filter="completed" />}
+      />
+    </Routes>
+  </BrowserRouter>
   );
 };
 
