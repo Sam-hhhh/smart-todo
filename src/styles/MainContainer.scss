@@ -1,11 +1,13 @@
 .main-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* 增加待办列表、分类、待办详情之间的间隔 */
+  gap: 15px; /* 增加待办列表、分类、待办详情之间的间隔 */
   padding: 20px;
   height: calc(100vh - 80px); // 减去header的高度
-  overflow: auto; // 改为auto，允许在需要时显示滚动条
+  overflow: hidden; // 改回hidden，防止出现双滚动条
   box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1600px; // 添加最大宽度限制
 }
 
 .category-container {
@@ -20,6 +22,7 @@
   gap: 15px;
   overflow-y: auto; // 添加垂直滚动条
   box-sizing: border-box;
+  flex-shrink: 0; // 防止容器被压缩
 }
 
 .task-list-container {
@@ -31,15 +34,17 @@
   height: 100%;
   overflow-y: auto; // 添加垂直滚动条
   box-sizing: border-box;
+  flex-shrink: 0; // 防止容器被压缩
 }
 
 .task-detail-container {
   width: 25%; /* 右侧待办详情区域 */
   background-color: #ffffff;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   height: 100%;
   overflow-y: auto; // 添加垂直滚动条
   box-sizing: border-box;
+  flex-shrink: 0; // 防止容器被压缩
 }
