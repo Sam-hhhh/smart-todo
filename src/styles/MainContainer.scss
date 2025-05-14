@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   gap: 20px; /* 增加待办列表、分类、待办详情之间的间隔 */
-  padding: 20px 0;
-  height: calc(100vh - 60px); // 减去header的高度
-  overflow: hidden; // 防止出现滚动条
+  padding: 20px;
+  height: calc(100vh - 80px); // 减去header的高度
+  overflow: auto; // 改为auto，允许在需要时显示滚动条
+  box-sizing: border-box;
 }
 
 .category-container {
@@ -13,29 +14,32 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; // 允许内容滚动
-  height: 100%; // 占满容器高度
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
+  overflow-y: auto; // 添加垂直滚动条
+  box-sizing: border-box;
 }
 
 .task-list-container {
   width: 45%;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; // 允许内容滚动
-  height: 100%; // 占满容器高度
+  height: 100%;
+  overflow-y: auto; // 添加垂直滚动条
+  box-sizing: border-box;
 }
 
 .task-detail-container {
   width: 25%; /* 右侧待办详情区域 */
   background-color: #ffffff;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; // 允许内容滚动
-  height: 100%; // 占满容器高度
+  height: 100%;
+  overflow-y: auto; // 添加垂直滚动条
+  box-sizing: border-box;
 }
