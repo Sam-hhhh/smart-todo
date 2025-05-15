@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import type { RootState } from "../store";
 import TaskItem from "./TaskItem";
-import "../styles/taskList.scss";
+import "../styles/TaskList.scss";
 
 interface Props {
   filter: "all" | "recent" | "completed";
