@@ -24,7 +24,7 @@ const AppContent = () => {
   }, [tasks]);
 
   return (
-    <BrowserRouter basename="/smart-todo">
+    <BrowserRouter>
       <Header/>
       <NotificationPermission />
       <Routes>
