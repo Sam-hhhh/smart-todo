@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../store/tasksSlice";
 import VoiceInput from "./VoiceInput";
-import "../styles/addTask.scss";
+import "../styles/AddTask.scss";
 
 const AddTask = () => {
   const [taskText, setTaskText] = useState("");
