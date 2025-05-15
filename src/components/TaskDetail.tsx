@@ -4,7 +4,7 @@ import type { RootState } from "../store";
 import { updateTaskDetails } from "../store/tasksSlice";
 import { reminderService } from "../services/reminderService";
 import type { Task } from "../types/task";
-import "../styles/TaskDetail.scss";
+import "../styles/taskDetail.scss";
 
 const TaskDetail = ({ selectedTaskId }: { selectedTaskId: number | null }) => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks);
