@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/voiceInput.scss";
+import "../styles/VoiceInput.scss";
 
 interface VoiceInputProps {
   onResult: (text: string, dueDate?: string, reminderTime?: string) => void;
